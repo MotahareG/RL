@@ -617,7 +617,7 @@ class LRPDataGenerator(object):
     def generate_instance(self, num_customers, num_facilities,
                           seed=None, compute_lambda=True, **kwargs):
         rng = np.random.RandomState(seed)
-        feats, lam = self._sample_instances(
+        feats, lam, gain = self._sample_instances(
             1, rng, compute_lambda=compute_lambda, verbose=True)
         return {
             'coords':    feats[0, :, :2],
